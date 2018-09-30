@@ -24,4 +24,4 @@ hs_err_pid*
 
 # by Kiea Seok Kang
 target/
-.settings/
+#.settings/
