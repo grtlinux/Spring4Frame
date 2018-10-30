@@ -3,8 +3,8 @@ This is for testing to spring4
 
 > - [_ch01-bankapp-xml](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch01-bankapp-xml "ch01-bankapp-xml") : ch01-bankapp-xml  
   
-> - [*ch02-bankapp-scopes](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch02-bankapp-scopes "ch02-bankapp-scopes") : ch02-bankapp-scopes  
-> - [*ch02-bankapp-interfaces](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch02-bankapp-interfaces "ch02-bankapp-interfaces") : ch02-bankapp-interfaces  
+> - [_ch02-bankapp-scopes](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch02-bankapp-scopes "ch02-bankapp-scopes") : ch02-bankapp-scopes  
+> - [_ch02-bankapp-interfaces](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch02-bankapp-interfaces "ch02-bankapp-interfaces") : ch02-bankapp-interfaces  
   
 > - [ch03-simple-types-examples](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch03-simple-types-examples "ch03-simple-types-examples") : ch03-simple-types-examples  
 > - [ch03-namespaces-example](https://github.com/grtlinux/Spring4Frame/tree/master/test01/ch03-namespaces-example "ch03-namespaces-example") : ch03-namespaces-example  
