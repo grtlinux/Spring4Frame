@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>chapter14</groupId>
 	<artifactId>ch14-bankapp-db-security</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<name>ch14-bankapp-db-security</name>
+	
 	<properties>
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<spring.security.version>3.2.0.RELEASE</spring.security.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
 	<repositories>
 		<repository>
 			<id>spring-maven-release</id>
@@ -37,6 +43,7 @@
 			<url>http://maven.springframework.org/milestone</url>
 		</pluginRepository>
 	</pluginRepositories>
+	
 	<dependencies>
 	    <dependency>
     	  <groupId>net.sf.ehcache</groupId>
@@ -63,21 +70,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.18</version>
 		</dependency>
-   		<dependency>
-        	<groupId>org.springframework.security</groupId>
-       	 	<artifactId>spring-security-acl</artifactId>
-        	<version>${spring.security.version}</version>
-    	</dependency>		
-   		<dependency>
-        	<groupId>org.springframework</groupId>
-       	 	<artifactId>spring-jdbc</artifactId>
-        	<version>${spring.version}</version>
-    	</dependency>		
-   		<dependency>
-        	<groupId>org.springframework.security</groupId>
-       	 	<artifactId>spring-security-taglibs</artifactId>
-        	<version>${spring.security.version}</version>
-    	</dependency>		
+
+		<!-- log -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -103,6 +97,8 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		
+		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -125,6 +121,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
@@ -135,6 +133,23 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${spring.security.version}</version>
 		</dependency>
+   		<dependency>
+        	<groupId>org.springframework.security</groupId>
+       	 	<artifactId>spring-security-acl</artifactId>
+        	<version>${spring.security.version}</version>
+    	</dependency>		
+   		<dependency>
+        	<groupId>org.springframework</groupId>
+       	 	<artifactId>spring-jdbc</artifactId>
+        	<version>${spring.version}</version>
+    	</dependency>		
+   		<dependency>
+        	<groupId>org.springframework.security</groupId>
+       	 	<artifactId>spring-security-taglibs</artifactId>
+        	<version>${spring.security.version}</version>
+    	</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-framework-bom</artifactId>
@@ -212,3 +227,4 @@
 		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 	</build>
 </project>
+

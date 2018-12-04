@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/security
-           http://www.springframework.org/schema/security/spring-security.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userDetailsService" />
@@ -17,10 +19,8 @@
 
 	<http use-expressions="true">
 		<access-denied-handler error-page="/access-denied" />
-		<intercept-url pattern="/fixedDeposit/*"
-			access="hasAnyRole('ROLE_CUSTOMER', 'ROLE_ADMIN')" />
-		<form-login login-page="/login"
-			authentication-failure-handler-ref="authFailureHandler" />
+		<intercept-url pattern="/fixedDeposit/*" access="hasAnyRole('ROLE_CUSTOMER', 'ROLE_ADMIN')" />
+		<form-login login-page="/login" authentication-failure-handler-ref="authFailureHandler" />
 		<logout />
 		<headers>
 			<cache-control />
@@ -97,3 +97,5 @@
 		<beans:constructor-arg ref="aclCache" />
 	</beans:bean>
 </beans:beans>
+
+

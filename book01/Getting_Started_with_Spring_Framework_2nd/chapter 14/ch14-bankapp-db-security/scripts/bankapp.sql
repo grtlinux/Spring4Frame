@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS `acl_class` (
 INSERT INTO `acl_class` (`id`, `class`) VALUES
 	(1, 'sample.spring.chapter14.domain.FixedDepositDetails');
 
+
+
+
 -- Dumping structure for table securitydb.acl_sid
 DROP TABLE IF EXISTS `acl_sid`;
 CREATE TABLE IF NOT EXISTS `acl_sid` (
@@ -29,25 +32,9 @@ INSERT INTO `acl_sid` (`id`, `principal`, `sid`) VALUES
 	(2, 1, 'cust2');
 /*!40000 ALTER TABLE `acl_sid` ENABLE KEYS */;
 
--- Dumping structure for table securitydb.acl_entry
-DROP TABLE IF EXISTS `acl_entry`;
-CREATE TABLE IF NOT EXISTS `acl_entry` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `acl_object_identity` bigint(20) NOT NULL,
-  `ace_order` int(11) NOT NULL,
-  `sid` bigint(20) NOT NULL,
-  `mask` int(11) NOT NULL,
-  `granting` tinyint(1) NOT NULL,
-  `audit_success` tinyint(1) NOT NULL,
-  `audit_failure` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique_uk_4` (`acl_object_identity`,`ace_order`),
-  KEY `foreign_fk_5` (`sid`),
-  CONSTRAINT `foreign_fk_4` FOREIGN KEY (`acl_object_identity`) REFERENCES `acl_object_identity` (`id`),
-  CONSTRAINT `foreign_fk_5` FOREIGN KEY (`sid`) REFERENCES `acl_sid` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=758 DEFAULT CHARSET=latin1;
 
--- Dumping data for table securitydb.acl_entry: ~2 rows (approximately)
+
+
 
 -- Dumping structure for table securitydb.acl_object_identity
 DROP TABLE IF EXISTS `acl_object_identity`;
@@ -69,6 +56,52 @@ CREATE TABLE IF NOT EXISTS `acl_object_identity` (
 
 -- Dumping data for table securitydb.acl_object_identity: ~1 rows (approximately)
 
+
+
+
+
+-- Dumping structure for table securitydb.acl_entry
+DROP TABLE IF EXISTS `acl_entry`;
+CREATE TABLE IF NOT EXISTS `acl_entry` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `acl_object_identity` bigint(20) NOT NULL,
+  `ace_order` int(11) NOT NULL,
+  `sid` bigint(20) NOT NULL,
+  `mask` int(11) NOT NULL,
+  `granting` tinyint(1) NOT NULL,
+  `audit_success` tinyint(1) NOT NULL,
+  `audit_failure` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_uk_4` (`acl_object_identity`,`ace_order`),
+  KEY `foreign_fk_5` (`sid`),
+  CONSTRAINT `foreign_fk_4` FOREIGN KEY (`acl_object_identity`) REFERENCES `acl_object_identity` (`id`),
+  CONSTRAINT `foreign_fk_5` FOREIGN KEY (`sid`) REFERENCES `acl_sid` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=758 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table securitydb.acl_entry: ~2 rows (approximately)
+
+
+
+
+
+-- Dumping structure for table securitydb.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table securitydb.users: ~3 rows (approximately)
+INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
+	('admin', 'admin', 1),
+	('cust1', 'cust1', 1),
+	('cust2', 'cust2', 1);
+
+
+
+	
 -- Dumping structure for table securitydb.authorities
 DROP TABLE IF EXISTS `authorities`;
 CREATE TABLE IF NOT EXISTS `authorities` (
@@ -85,6 +118,10 @@ INSERT INTO `authorities` (`username`, `authority`) VALUES
 	('cust2', 'ROLE_CUSTOMER');
 
 
+
+
+
+
 -- Dumping structure for table securitydb.fixed_deposit_details
 DROP TABLE IF EXISTS `fixed_deposit_details`;
 CREATE TABLE IF NOT EXISTS `fixed_deposit_details` (
@@ -98,17 +135,8 @@ CREATE TABLE IF NOT EXISTS `fixed_deposit_details` (
 
 -- Dumping data for table securitydb.fixed_deposit_details: ~1 rows (approximately)
 
--- Dumping structure for table securitydb.users
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `enabled` tinyint(1) NOT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table securitydb.users: ~3 rows (approximately)
-INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
-	('admin', 'admin', 1),
-	('cust1', 'cust1', 1),
-	('cust2', 'cust2', 1);
+
+
+
+
